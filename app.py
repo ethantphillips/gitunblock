@@ -28,7 +28,7 @@ def update_license():
         return jsonify({"error": "Missing license key or action"}), 400
 
     # Fetch current license file from GitHub
-    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    headers = {"Authorization": f"Bearer {GITHUB_TOKEN}"}
     url = f"https://api.github.com/repos/{REPO}/contents/{FILE_PATH}"
     response = requests.get(url, headers=headers)
 
